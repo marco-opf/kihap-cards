@@ -10,6 +10,10 @@ with inline styles and image files. Anything that can serve a folder can host it
 | `index.html` | The site (desktop layout, 1440px wide) |
 | `mobile.html` | The phone layout (390px wide) |
 | `assets/` | Logo and card images (WebP) |
+| `favicon.ico`, `favicon-*.png` | Browser tab icons |
+| `apple-touch-icon.png` | iPhone and iPad home-screen icon |
+| `android-chrome-*.png` | Android and installable web-app icons |
+| `site.webmanifest`, `browserconfig.xml` | Mobile/PWA and Microsoft icon metadata |
 
 `index.html` redirects to `mobile.html` under 760px wide, and `mobile.html` redirects
 back above it. Add `?full` to the URL to force the desktop page on a phone.
