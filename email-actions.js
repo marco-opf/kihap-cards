@@ -18,7 +18,10 @@
     '.email-card-optin{display:flex;align-items:flex-start;gap:10px;color:#4B5158;font-size:13px;line-height:1.4;font-weight:500}',
     '.email-card-optin input{margin-top:2px;accent-color:#EF2B2D}',
     '.email-card-submit{border:0;border-radius:999px;padding:15px 20px;background:#EF2B2D;color:#fff;font-family:"Baloo 2",Figtree,system-ui,sans-serif;font-size:18px;font-weight:700;cursor:pointer}',
+    '.email-card-submit:disabled{opacity:.65;cursor:wait}',
     '.email-card-note{margin:0;text-align:center;color:#6B7280;font-size:12px;line-height:1.4}',
+    '.email-card-status{margin:0;text-align:center;font-size:14px;font-weight:700;line-height:1.4;color:#0F8B58}',
+    '.email-card-status.is-error{color:#C21D1F}',
     '.email-card-order-only[hidden],.email-card-contact-only[hidden]{display:none}',
     '@media(max-width:600px){.email-dialog{width:calc(100% - 24px);max-height:calc(100vh - 24px);border-radius:20px}.email-card{padding:22px;gap:16px}.email-card h2{font-size:29px}.email-card-row{grid-template-columns:1fr}.email-card-field textarea{min-height:78px}}'
   ].join('');
@@ -33,8 +36,9 @@
         '<div><span class="email-card-kicker">Kihap! Cards</span><h2 id="email-card-title">Order your set</h2></div>',
         '<button class="email-card-close" type="button" aria-label="Close">&times;</button>',
       '</div>',
-      '<p class="email-card-copy">Tell us where to reach you. We will open a ready-to-send Gmail draft with your details.</p>',
+      '<p class="email-card-copy">Tell us where to reach you and we will email your details directly to Kihap! Cards.</p>',
       '<form class="email-card-form">',
+        '<input name="_honey" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">',
         '<div class="email-card-row">',
           '<label class="email-card-field">Name<input name="name" autocomplete="name" required></label>',
           '<label class="email-card-field">Email<input name="email" type="email" autocomplete="email" required></label>',
@@ -46,8 +50,9 @@
         '<label class="email-card-field email-card-order-only">Shipping address<textarea name="address" autocomplete="street-address" required></textarea></label>',
         '<label class="email-card-field email-card-contact-only" hidden>Message<textarea name="message" required></textarea></label>',
         '<label class="email-card-optin"><input name="optin" type="checkbox"><span>Email me occasional Kihap! Cards news and product updates. Optional—you can unsubscribe anytime.</span></label>',
-        '<button class="email-card-submit" type="submit">Open ready-to-send email</button>',
-        '<p class="email-card-note">Gmail will open next. Review the message, then press Send.</p>',
+        '<button class="email-card-submit" type="submit">Send order request</button>',
+        '<p class="email-card-note">Your details will be sent directly to kihapcards@gmail.com.</p>',
+        '<p class="email-card-status" role="status" aria-live="polite"></p>',
       '</form>',
     '</div>'
   ].join('');
@@ -57,6 +62,7 @@
   var title = dialog.querySelector('#email-card-title');
   var copy = dialog.querySelector('.email-card-copy');
   var submit = dialog.querySelector('.email-card-submit');
+  var status = dialog.querySelector('.email-card-status');
   var mode = 'order';
 
   function setMode(nextMode) {
@@ -69,9 +75,12 @@
     form.elements.message.required = mode === 'contact';
     title.textContent = mode === 'order' ? 'Order your set' : 'Send us a message';
     copy.textContent = mode === 'order'
-      ? 'Enter your details for the $99 Kihap! Cards set. We will open a ready-to-send Gmail draft.'
-      : 'What would you like to know? We will open a ready-to-send Gmail draft to Kihap! Cards.';
-    submit.textContent = 'Open ready-to-send email';
+      ? 'Enter your details for the $99 Kihap! Cards set and send your order request directly.'
+      : 'What would you like to know? Send your message directly to Kihap! Cards.';
+    submit.textContent = mode === 'order' ? 'Send order request' : 'Send message';
+    submit.disabled = false;
+    status.textContent = '';
+    status.classList.remove('is-error');
   }
 
   function openDialog(nextMode) {
@@ -101,7 +110,7 @@
     if (event.target === dialog) dialog.close();
   });
 
-  form.addEventListener('submit', function (event) {
+  form.addEventListener('submit', async function (event) {
     event.preventDefault();
     var data = new FormData(form);
     var name = String(data.get('name') || '').trim();
@@ -134,8 +143,47 @@
       ];
     }
 
-    var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=kihapcards%40gmail.com&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
-    window.location.href = gmailUrl;
-    dialog.close();
+    var payload = {
+      _subject: subject,
+      _template: 'table',
+      _honey: String(data.get('_honey') || ''),
+      request_type: mode === 'order' ? 'Order request' : 'Contact message',
+      name: name,
+      email: email,
+      message: lines.join('\n'),
+      email_updates_opt_in: optedIn
+    };
+
+    if (mode === 'order') {
+      payload.quantity = String(data.get('quantity') || '1');
+      payload.phone = String(data.get('phone') || '').trim();
+      payload.shipping_address = String(data.get('address') || '').trim();
+    }
+
+    submit.disabled = true;
+    submit.textContent = 'Sending...';
+    status.textContent = '';
+    status.classList.remove('is-error');
+
+    try {
+      var response = await fetch('https://formsubmit.co/ajax/kihapcards@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      var result = await response.json();
+      if (!response.ok || result.success === false) throw new Error('Form service rejected the message');
+
+      form.reset();
+      submit.textContent = mode === 'order' ? 'Order request sent' : 'Message sent';
+      status.textContent = mode === 'order'
+        ? 'Thanks! Your order request has been sent to Kihap! Cards.'
+        : 'Thanks! Your message has been sent to Kihap! Cards.';
+    } catch (error) {
+      submit.disabled = false;
+      submit.textContent = mode === 'order' ? 'Try sending again' : 'Try again';
+      status.textContent = 'We could not send that message. Please try again in a moment.';
+      status.classList.add('is-error');
+    }
   });
 }());
