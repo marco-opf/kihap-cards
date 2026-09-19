@@ -33,7 +33,7 @@
         '<div><span class="email-card-kicker">Kihap! Cards</span><h2 id="email-card-title">Order your set</h2></div>',
         '<button class="email-card-close" type="button" aria-label="Close">&times;</button>',
       '</div>',
-      '<p class="email-card-copy">Tell us where to reach you. We will open a ready-to-send email with your details.</p>',
+      '<p class="email-card-copy">Tell us where to reach you. We will open a ready-to-send Gmail draft with your details.</p>',
       '<form class="email-card-form">',
         '<div class="email-card-row">',
           '<label class="email-card-field">Name<input name="name" autocomplete="name" required></label>',
@@ -46,8 +46,8 @@
         '<label class="email-card-field email-card-order-only">Shipping address<textarea name="address" autocomplete="street-address" required></textarea></label>',
         '<label class="email-card-field email-card-contact-only" hidden>Message<textarea name="message" required></textarea></label>',
         '<label class="email-card-optin"><input name="optin" type="checkbox"><span>Email me occasional Kihap! Cards news and product updates. Optional—you can unsubscribe anytime.</span></label>',
-        '<button class="email-card-submit" type="submit">Continue to email</button>',
-        '<p class="email-card-note">Your email app will open next. Review the message, then press Send.</p>',
+        '<button class="email-card-submit" type="submit">Open ready-to-send email</button>',
+        '<p class="email-card-note">Gmail will open next. Review the message, then press Send.</p>',
       '</form>',
     '</div>'
   ].join('');
@@ -69,9 +69,9 @@
     form.elements.message.required = mode === 'contact';
     title.textContent = mode === 'order' ? 'Order your set' : 'Send us a message';
     copy.textContent = mode === 'order'
-      ? 'Enter your details for the $99 Kihap! Cards set. We will open a ready-to-send order email.'
-      : 'What would you like to know? We will open a ready-to-send message to Kihap! Cards.';
-    submit.textContent = mode === 'order' ? 'Continue to email' : 'Create email';
+      ? 'Enter your details for the $99 Kihap! Cards set. We will open a ready-to-send Gmail draft.'
+      : 'What would you like to know? We will open a ready-to-send Gmail draft to Kihap! Cards.';
+    submit.textContent = 'Open ready-to-send email';
   }
 
   function openDialog(nextMode) {
@@ -134,7 +134,8 @@
       ];
     }
 
-    window.location.href = 'mailto:kihapcards@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+    var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=kihapcards%40gmail.com&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+    window.location.href = gmailUrl;
     dialog.close();
   });
 }());
