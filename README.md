@@ -53,7 +53,7 @@ as long as the filename stays the same.
 
 - The layouts are fixed-width (1440 / 390), which is why the redirect exists. A single
   fluid layout would need the inline widths reworked into a responsive stylesheet.
-- The final Add to cart button opens a pre-filled order email to
-  `kihapcards@gmail.com`; it is not a payment checkout.
+- Buy Now and Contact open an on-page email card. Submitting the card opens a
+  pre-filled message to `kihapcards@gmail.com`; it is not a payment checkout.
 - Product claims in the copy — free US shipping, 30-day returns, storage ring and
   quick-start card — are placeholders to confirm before launch.
