@@ -1,374 +1,180 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kihap! Cards — Taekwondo drill cards for kids</title>
-<meta name="description" content="61 laminated taekwondo drill cards plus 4 advanced bonus drills, a star reward system and a companion app. $99 a set.">
-<meta name="theme-color" content="#EF2B2D">
-<meta name="msapplication-TileColor" content="#EF2B2D">
-<meta name="msapplication-config" content="/browserconfig.xml">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
-<script defer src="/email-actions.js"></script>
-<style>
-body{margin:0;font-family:'Figtree',system-ui,sans-serif;background:#ffffff;color:#111111;-webkit-font-smoothing:antialiased}
-a{color:#111111}a:hover{color:#EF2B2D}
-h1,h2,h3{font-family:'Baloo 2','Figtree',system-ui,sans-serif;margin:0}
-</style>
-<style>html,body{background:#fff}body{display:flex;justify-content:center}</style>
-<script>if(window.innerWidth<760&&!location.search.includes('full')){location.replace('mobile.html');}</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kihap! Cards — Taekwondo training, one card at a time</title>
+  <meta name="description" content="65 laminated taekwondo drill cards for focused, repeatable training. One set, secure Stripe checkout, free U.S. shipping.">
+  <meta name="theme-color" content="#ef2b2d">
+  <meta name="msapplication-TileColor" content="#ef2b2d">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta property="og:title" content="Kihap! Cards">
+  <meta property="og:description" content="Taekwondo training, one card at a time.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/box-label.webp">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/site.js"></script>
 </head>
 <body>
-<div style="width: 1440px; height: 5380px; box-sizing: border-box; background: #ffffff; display: flex; flex-direction: column;">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- header -->
-  <header style="position: relative; height: 88px; box-sizing: border-box; padding: 0 80px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E6E8EC;">
-    <a href="#top" style="position: absolute; left: 70px; top: 10px; z-index: 5; text-decoration: none; display: block; background: #ffffff; border-radius: 18px; padding: 6px 16px;">
-      <img src="assets/logo.webp" alt="Kihap! Cards" style="height: 158px; width: auto; display: block;">
-    </a>
-    <span style="display: block; width: 268px; height: 1px;"></span>
-    <nav style="display: flex; align-items: center; gap: 36px;">
-      <a href="#cards" style="text-decoration: none; font-size: 16px; font-weight: 600;">The cards</a>
-      <a href="#stars" style="text-decoration: none; font-size: 16px; font-weight: 600;">Stars &amp; app</a>
-      <a href="#limited" style="text-decoration: none; font-size: 16px; font-weight: 600;">Limited edition</a>
-      <a href="#faq" style="text-decoration: none; font-size: 16px; font-weight: 600;">FAQ</a>
-      <a class="email-order" href="#buy" style="text-decoration: none; background: #EF2B2D; color: #ffffff; font-weight: 700; font-size: 16px; padding: 13px 24px; border-radius: 999px;">Buy Now — $99</a>
-    </nav>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Kihap Cards home">
+        <img src="/assets/logo.webp" alt="Kihap! Cards" width="182" height="106">
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span><span class="sr-only">Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#cards">The cards</a>
+        <a href="#video">Watch</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a class="button button-small" data-checkout href="#buy">Buy now — $99</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- hero -->
-  <section id="top" style="box-sizing: border-box; padding: 152px 80px 96px; display: flex; gap: 72px; align-items: center;">
-    <div style="width: 600px; display: flex; flex-direction: column; gap: 28px;">
-      <h1 style="font-size: 76px; line-height: 1.02; letter-spacing: -1.5px; font-weight: 800;">Train smarter.<br>One card at a time.</h1>
-      <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #4B5158; max-width: 520px;">A deck of laminated taekwondo drills kids can actually follow. Pick a card, do the drill, earn your stars — and track every one in the app.</p>
-      <div style="display: flex; align-items: center; gap: 20px; padding-top: 8px;">
-        <a class="email-order" href="#buy" style="text-decoration: none; background: #EF2B2D; color: #ffffff; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 20px; padding: 18px 34px; border-radius: 999px;">Buy Now — $99</a>
-        <a href="#cards" style="text-decoration: none; font-weight: 700; font-size: 18px; padding: 18px 28px; border-radius: 999px; border: 2px solid #111111;">See the cards</a>
-      </div>
-      <p style="margin: 0; font-size: 15px; color: #6B7280;">Free shipping in the US · Companion app included</p>
-      <a href="#limited" style="text-decoration: none; display: flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 600; color: #111111;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#F5B914" stroke="#B88400" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-        Some sets hide a signed Mystery Kick card
-      </a>
-    </div>
-    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; gap: 26px;">
-      <div style="position: relative; width: 100%; height: 520px; display: flex; justify-content: center; align-items: center;">
-        <img src="assets/card-frh-backkick.webp" alt="Combinations drill card 18: front-leg roundhouse to back kick" style="width: 268px; border-radius: 18px; box-shadow: 0 18px 40px rgba(17,17,17,0.14); transform: rotate(-9deg); position: absolute; left: 16px; top: 58px;">
-        <img src="assets/card-blazepod.webp" alt="BlazePod drill card: Kick the Light" style="width: 268px; border-radius: 18px; box-shadow: 0 18px 40px rgba(17,17,17,0.14); transform: rotate(9deg); position: absolute; right: 16px; top: 58px;">
-        <img src="assets/card-sf18.webp" alt="Sparring footwork card SF18: Angle Off Left" style="width: 372px; border-radius: 20px; box-shadow: 0 26px 60px rgba(17,17,17,0.2); position: relative; z-index: 2;">
-      </div>
-      <span style="background: #FFF1F1; color: #C21D1F; font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; padding: 9px 16px; border-radius: 999px;">61 drills + 4 bonus drills · 9 categories</span>
-    </div>
-  </section>
-
-  <!-- sofia band -->
-  <section style="box-sizing: border-box; padding: 44px 80px; background: #111111; color: #ffffff; display: flex; align-items: center; justify-content: space-between; gap: 48px;">
-    <p style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 28px; line-height: 1.3;">Trained with by USA Taekwondo National Champion <span style="color: #F5B914;">Sofia Rullo</span>.</p>
-    <p style="margin: 0; font-size: 17px; color: #C9CDD4; max-width: 420px;">Every drill in the deck comes from real sparring practice — not a generic workout list.</p>
-  </section>
-
-  <!-- three facts -->
-  <section style="box-sizing: border-box; padding: 88px 80px; display: flex; gap: 28px;">
-    <div style="flex-grow: 1; flex-basis: 0; border: 1px solid #E6E8EC; border-radius: 20px; padding: 36px 32px; display: flex; flex-direction: column; gap: 12px;">
-      <div style="width: 46px; height: 46px; border-radius: 12px; background: #EAF3FF; display: flex; align-items: center; justify-content: center;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E88FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="13" height="16" rx="2"></rect><path d="M8 3h11a2 2 0 0 1 2 2v13"></path></svg>
-      </div>
-      <h3 style="font-size: 26px; font-weight: 700;">65 laminated cards</h3>
-      <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #4B5158;">61 core drills plus 4 advanced bonus drills. Thick, wipe-clean cards built for the mat — one drill per card, reps printed on the front.</p>
-    </div>
-    <div style="flex-grow: 1; flex-basis: 0; border: 1px solid #E6E8EC; border-radius: 20px; padding: 36px 32px; display: flex; flex-direction: column; gap: 12px;">
-      <div style="width: 46px; height: 46px; border-radius: 12px; background: #FFF6DE; display: flex; align-items: center; justify-content: center;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="#F5B914" stroke="#B88400" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-      </div>
-      <h3 style="font-size: 26px; font-weight: 700;">Three stars per drill</h3>
-      <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #4B5158;">Two for doing it right, one Stretch Star for doing it clean. Kids know exactly what "good" looks like.</p>
-    </div>
-    <div style="flex-grow: 1; flex-basis: 0; border: 1px solid #E6E8EC; border-radius: 20px; padding: 36px 32px; display: flex; flex-direction: column; gap: 12px;">
-      <div style="width: 46px; height: 46px; border-radius: 12px; background: #FFEDED; display: flex; align-items: center; justify-content: center;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF2B2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"></rect><path d="M11 18h2"></path></svg>
-      </div>
-      <h3 style="font-size: 26px; font-weight: 700;">Companion app</h3>
-      <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #4B5158;">Tap the stars as they're earned. The app keeps the streak, the totals and the drills still to go.</p>
-    </div>
-  </section>
-
-  <!-- categories + cards -->
-  <section id="cards" style="box-sizing: border-box; padding: 40px 80px 96px; display: flex; flex-direction: column; gap: 40px;">
-    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px;">
-      <div style="max-width: 640px; display: flex; flex-direction: column; gap: 14px;">
-        <h2 style="font-size: 52px; font-weight: 800; letter-spacing: -1px;">Nine colors. One system.</h2>
-        <p style="margin: 0; font-size: 19px; line-height: 1.5; color: #4B5158;">Every card is colour-coded by what it trains, so a session is as simple as pulling one card from each colour.</p>
-      </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 8px; max-width: 520px; justify-content: flex-end;">
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #ffffff; background: #1E88FF; padding: 7px 14px; border-radius: 999px;">Footwork</span>
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #ffffff; background: #0B5FBF; padding: 7px 14px; border-radius: 999px;">Sparring footwork</span>
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #ffffff; background: #0F8B58; padding: 7px 14px; border-radius: 999px;">Single kicks</span>
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #ffffff; background: #0E8C86; padding: 7px 14px; border-radius: 999px;">Combinations</span>
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #ffffff; background: #EF2B2D; padding: 7px 14px; border-radius: 999px;">Advancing</span>
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #ffffff; background: #9A7400; padding: 7px 14px; border-radius: 999px;">BlazePod</span>
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #ffffff; background: #7B3FE4; padding: 7px 14px; border-radius: 999px;">Clinch</span>
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #ffffff; background: #D4531B; padding: 7px 14px; border-radius: 999px;">Reaction</span>
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #ffffff; background: #6B7280; padding: 7px 14px; border-radius: 999px;">Strength</span>
-      </div>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 20px;">
-      <img src="assets/card-footwork.webp" alt="Footwork card: Shuffle Roundtrips" style="width: 100%; border-radius: 16px; border: 1px solid #E6E8EC;">
-      <img src="assets/card-sf16.webp" alt="Sparring footwork card SF16: Single Hop Shield Entry" style="width: 100%; border-radius: 16px; border: 1px solid #E6E8EC;">
-      <img src="assets/card-kicks.webp" alt="Single kicks card: Back Kick" style="width: 100%; border-radius: 16px; border: 1px solid #E6E8EC;">
-      <img src="assets/card-combos.webp" alt="Combinations card: front roundhouse to back roundhouse" style="width: 100%; border-radius: 16px; border: 1px solid #E6E8EC;">
-      <img src="assets/card-advancing.webp" alt="Advancing card: First One There" style="width: 100%; border-radius: 16px; border: 1px solid #E6E8EC;">
-      <img src="assets/card-clinch.webp" alt="Clinch card: Enter Off a Kick" style="width: 100%; border-radius: 16px; border: 1px solid #E6E8EC;">
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 20px;">
-      <img src="assets/card-sf18.webp" alt="Sparring footwork card SF18: Angle Off Left" style="width: 100%; border-radius: 16px; border: 1px solid #E6E8EC;">
-      <img src="assets/card-reaction.webp" alt="Reaction card: Paddle Claps" style="width: 100%; border-radius: 16px; border: 1px solid #E6E8EC;">
-      <img src="assets/card-live.webp" alt="Live sparring card: Tag" style="width: 100%; border-radius: 16px; border: 1px solid #E6E8EC;">
-      <img src="assets/card-strength.webp" alt="Strength card: Pushups" style="width: 100%; border-radius: 16px; border: 1px solid #E6E8EC;">
-      <img src="assets/card-blazepod.webp" alt="BlazePod card: Kick the Light" style="width: 100%; border-radius: 16px; border: 1px solid #E6E8EC;">
-      <div style="border: 2px dashed #D7DBE0; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 24px; text-align: center;">
-        <span style="font-family: 'Baloo 2', sans-serif; font-size: 40px; font-weight: 800; color: #111111;">+54</span>
-        <span style="font-size: 15px; color: #6B7280; line-height: 1.4;">more drills in the set</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- stars + app -->
-  <section id="stars" style="box-sizing: border-box; padding: 88px 80px; background: #F6F7F9; display: flex; gap: 72px; align-items: center;">
-    <div style="width: 620px; display: flex; flex-direction: column; gap: 26px;">
-      <h2 style="font-size: 52px; font-weight: 800; letter-spacing: -1px; line-height: 1.05;">Stars on the card.<br>Progress in the app.</h2>
-      <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #4B5158;">Each card sets the bar in plain words. Hit the first two and the drill is done well. Hit the Stretch Star and it was done clean — the one kids chase.</p>
-      <div style="display: flex; flex-direction: column; gap: 14px; background: #ffffff; border: 1px solid #E6E8EC; border-radius: 20px; padding: 28px 30px;">
-        <div style="display: flex; align-items: center; gap: 14px;">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="#ffffff" stroke="#EF2B2D" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-          <span style="font-size: 18px; font-weight: 600;">Hands Up</span>
+  <main id="main">
+    <section id="top" class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Train with purpose</p>
+        <h1>One drill.<br>One card.<br>Better training.</h1>
+        <p class="lede">A focused deck of laminated taekwondo drills kids can follow on the mat. Pick a card, do the work, and earn every star.</p>
+        <div class="hero-actions">
+          <a class="button" data-checkout href="#buy">Buy now — $99</a>
+          <a class="button button-secondary" href="#cards">See the cards</a>
         </div>
-        <div style="height: 1px; background: #E6E8EC;"></div>
-        <div style="display: flex; align-items: center; gap: 14px;">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="#ffffff" stroke="#EF2B2D" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-          <span style="font-size: 18px; font-weight: 600;">Reset to Stance</span>
+        <ul class="trust-list" aria-label="Purchase highlights">
+          <li>65 laminated cards</li>
+          <li>Free U.S. shipping</li>
+          <li>Secure Stripe checkout</li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-label="A selection of Kihap Cards">
+        <img class="hero-card hero-card-left" src="/assets/card-frh-backkick.webp" alt="Combination drill card" width="440" height="616">
+        <img class="hero-card hero-card-center" src="/assets/card-sf18.webp" alt="Angle Off Left sparring footwork card" width="440" height="616">
+        <img class="hero-card hero-card-right" src="/assets/card-blazepod.webp" alt="Kick the Light BlazePod drill card" width="440" height="616">
+      </div>
+    </section>
+
+    <section class="champion-band">
+      <div class="shell champion-inner">
+        <p>Trained with by USA Taekwondo National Champion <strong>Sofia Rullo.</strong></p>
+        <span>Real sparring practice, turned into repeatable sessions.</span>
+      </div>
+    </section>
+
+    <section class="section shell" aria-labelledby="why-title">
+      <div class="section-heading">
+        <p class="eyebrow">Made for the mat</p>
+        <h2 id="why-title">Less planning. More training.</h2>
+        <p>Each card gives athletes one clear drill, the reps to complete, and three visible goals to chase.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-number">65</span><h3>Complete drill deck</h3><p>61 core drills plus 4 advanced bonus drills, organized for fast session planning.</p></article>
+        <article class="feature-card feature-card-yellow"><span class="feature-icon" aria-hidden="true">★</span><h3>Three goals per drill</h3><p>Simple, visible standards help athletes understand what good execution looks like.</p></article>
+        <article class="feature-card feature-card-blue"><span class="feature-icon" aria-hidden="true">▣</span><h3>Companion app included</h3><p>Track earned stars, training streaks, and the drills that are still waiting to be mastered.</p></article>
+      </div>
+    </section>
+
+    <section id="cards" class="section cards-section">
+      <div class="shell">
+        <div class="section-heading section-heading-wide">
+          <div><p class="eyebrow">Inside the deck</p><h2>Nine categories. One training system.</h2></div>
+          <p>Color-coded cards make it easy to build a balanced session or focus on exactly what needs work.</p>
         </div>
-        <div style="height: 1px; background: #E6E8EC;"></div>
-        <div style="display: flex; align-items: center; gap: 14px; background: #FFF9E8; border-radius: 12px; padding: 12px 14px; margin: -4px -6px;">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="#F5B914" stroke="#B88400" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.8px; color: #C21D1F;">STRETCH STAR</span>
-          <span style="font-size: 18px; font-weight: 700;">Power &amp; Speed</span>
+        <div class="category-row" aria-label="Card categories">
+          <span>Footwork</span><span>Sparring</span><span>Kicks</span><span>Combinations</span><span>Advancing</span><span>BlazePod</span><span>Clinch</span><span>Reaction</span><span>Strength</span>
+        </div>
+        <div class="card-gallery">
+          <img src="/assets/card-footwork.webp" alt="Shuffle Roundtrips footwork card" loading="lazy">
+          <img src="/assets/card-sf16.webp" alt="Single Hop Shield Entry sparring footwork card" loading="lazy">
+          <img src="/assets/card-kicks.webp" alt="Back Kick card" loading="lazy">
+          <img src="/assets/card-combos.webp" alt="Roundhouse combination card" loading="lazy">
+          <img src="/assets/card-advancing.webp" alt="First One There advancing card" loading="lazy">
+          <img src="/assets/card-clinch.webp" alt="Enter Off a Kick clinch card" loading="lazy">
         </div>
       </div>
-      <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #4B5158;">Tap each star in the app as it's earned. It keeps the totals, the streak and the drills you haven't touched this week — no clipboard, no spreadsheet.</p>
-    </div>
+    </section>
 
-    <div style="flex-grow: 1; display: flex; justify-content: center;">
-      <div style="width: 320px; height: 650px; border-radius: 44px; background: #111111; padding: 12px; box-sizing: border-box; box-shadow: 0 26px 60px rgba(17,17,17,0.22);">
-        <div style="width: 100%; height: 100%; border-radius: 34px; background: #ffffff; box-sizing: border-box; padding: 28px 22px; display: flex; flex-direction: column; gap: 18px; overflow: hidden;">
-          <div style="display: flex; align-items: center; justify-content: space-between;">
-            <span style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px;">This week</span>
-            <span style="font-size: 13px; font-weight: 700; color: #ffffff; background: #EF2B2D; padding: 5px 12px; border-radius: 999px;">6 day streak</span>
-          </div>
-          <div style="background: #F6F7F9; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px;">
-            <span style="font-size: 14px; color: #6B7280; font-weight: 600;">Stars earned</span>
-            <div style="display: flex; align-items: baseline; gap: 8px;">
-              <span style="font-family: 'Baloo 2', sans-serif; font-size: 44px; font-weight: 800; line-height: 1;">128</span>
-              <span style="font-size: 15px; color: #6B7280;">of 183</span>
-            </div>
-            <div style="height: 10px; border-radius: 999px; background: #E6E8EC; overflow: hidden;">
-              <div style="width: 70%; height: 100%; background: #F5B914;"></div>
-            </div>
-          </div>
-          <span style="font-size: 14px; font-weight: 700; color: #6B7280; letter-spacing: 0.6px;">TODAY'S CARDS</span>
-          <div style="display: flex; flex-direction: column; gap: 10px;">
-            <div style="border: 1px solid #E6E8EC; border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 12px;">
-              <span style="width: 34px; height: 34px; border-radius: 9px; background: #1E88FF; color: #ffffff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 15px; display: flex; align-items: center; justify-content: center;">01</span>
-              <span style="flex-grow: 1; font-size: 15px; font-weight: 600;">Shuffle Roundtrips</span>
-              <span style="display: flex; gap: 3px;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B914" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B914" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#E6E8EC" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-              </span>
-            </div>
-            <div style="border: 1px solid #E6E8EC; border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 12px;">
-              <span style="width: 34px; height: 34px; border-radius: 9px; background: #0F8B58; color: #ffffff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 15px; display: flex; align-items: center; justify-content: center;">13</span>
-              <span style="flex-grow: 1; font-size: 15px; font-weight: 600;">Back Kick</span>
-              <span style="display: flex; gap: 3px;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B914" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B914" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B914" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-              </span>
-            </div>
-            <div style="border: 1px solid #E6E8EC; border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 12px;">
-              <span style="width: 34px; height: 34px; border-radius: 9px; background: #7B3FE4; color: #ffffff; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 15px; display: flex; align-items: center; justify-content: center;">41</span>
-              <span style="flex-grow: 1; font-size: 15px; font-weight: 600;">Enter Off a Kick</span>
-              <span style="display: flex; gap: 3px;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#E6E8EC" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#E6E8EC" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#E6E8EC" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-              </span>
-            </div>
-          </div>
-          <div style="margin-top: auto; background: #111111; color: #ffffff; border-radius: 16px; padding: 15px; text-align: center; font-weight: 700; font-size: 16px;">Start today's session</div>
+    <section id="video" class="section video-section">
+      <div class="shell video-grid">
+        <div>
+          <p class="eyebrow">See it in action</p>
+          <h2>Two minutes to a better training session.</h2>
+          <p>Watch how the deck turns an open mat and a few minutes of practice into a clear, focused session.</p>
+        </div>
+        <div class="video-placeholder" data-video-placeholder>
+          <img src="/assets/box-label.webp" alt="Kihap Cards explainer video poster" loading="lazy">
+          <div class="video-shade"></div>
+          <button class="play-button" type="button" data-video-play aria-label="Play the Kihap Cards explainer video">
+            <span aria-hidden="true">▶</span>
+          </button>
+          <p data-video-message>Watch the two-minute Kihap Cards explainer.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- limited edition -->
-  <section id="limited" style="box-sizing: border-box; padding: 88px 80px; background: #111111; color: #ffffff; display: flex; gap: 80px; align-items: center;">
-    <div style="width: 600px; display: flex; flex-direction: column; gap: 24px;">
-      <span style="align-self: flex-start; border: 1px solid #F5B914; color: #F5B914; font-size: 12px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; padding: 8px 14px; border-radius: 999px;">Limited edition</span>
-      <h2 style="font-size: 52px; font-weight: 800; letter-spacing: -1px; line-height: 1.05;">Some sets hide a<br><span style="color: #F5B914;">signed Mystery Kick.</span></h2>
-      <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #C9CDD4;">A small number of sets carry a limited-edition card that isn't in the deck — a mystery kick drill, hand-signed by Sofia. They go into packages at random, so you only find out when you open yours.</p>
-      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 13px;">
-        <li style="display: flex; align-items: center; gap: 12px; font-size: 17px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#F5B914" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-          Hand-signed by Sofia Rullo
-        </li>
-        <li style="display: flex; align-items: center; gap: 12px; font-size: 17px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#F5B914" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-          A kick drill that isn't on the other 65 cards
-        </li>
-        <li style="display: flex; align-items: center; gap: 12px; font-size: 17px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#F5B914" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9z"></path></svg>
-          Packed at random — never sold on its own
-        </li>
-      </ul>
-      <div style="display: flex; align-items: center; gap: 18px; padding-top: 6px;">
-        <a class="email-order" href="#buy" style="text-decoration: none; background: #F5B914; color: #111111; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 20px; padding: 17px 34px; border-radius: 999px;">Buy Now — $99</a>
-        <span style="font-size: 15px; color: #9AA0A8;">While they last</span>
+    <section id="how" class="section shell" aria-labelledby="how-title">
+      <div class="section-heading"><p class="eyebrow">Start in seconds</p><h2 id="how-title">Pick. Practice. Progress.</h2></div>
+      <ol class="steps">
+        <li><span>1</span><div><h3>Choose a card</h3><p>Pick a category or build a varied session across the deck.</p></div></li>
+        <li><span>2</span><div><h3>Do the drill</h3><p>Follow the printed repetitions and keep the instruction visible.</p></div></li>
+        <li><span>3</span><div><h3>Earn the stars</h3><p>Use the three goals to recognize clean technique and focused effort.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="mystery-section">
+      <div class="shell mystery-inner">
+        <div><p class="eyebrow eyebrow-gold">Limited edition</p><h2>Some sets hide a signed Mystery Kick.</h2><p>A small number of packages contain an extra mystery drill card hand-signed by Sofia Rullo. They are packed at random and never sold separately.</p></div>
+        <div class="mystery-card" aria-label="Mystery Kick signed card illustration"><span>Mystery Kick</span><strong>?</strong><em>Sofia Rullo</em><small>Hand-signed</small></div>
       </div>
-    </div>
+    </section>
 
-    <div style="flex-grow: 1; display: flex; justify-content: center; align-items: center; height: 480px; position: relative;">
-      <div style="position: absolute; width: 280px; height: 380px; border-radius: 22px; background: #1C1C1C; border: 1px solid #3A3A3A; transform: rotate(-10deg) translateX(-70px);"></div>
-      <div style="position: relative; width: 320px; height: 430px; border-radius: 24px; background: #171717; border: 2px solid #F5B914; box-sizing: border-box; padding: 26px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; transform: rotate(4deg); box-shadow: 0 26px 60px rgba(0,0,0,0.5);">
-        <span style="font-size: 12px; font-weight: 800; letter-spacing: 2px; color: #F5B914;">MYSTERY KICK</span>
-        <div style="width: 150px; height: 150px; border-radius: 50%; border: 2px dashed #5A4A12; display: flex; align-items: center; justify-content: center;">
-          <span style="font-family: 'Baloo 2', sans-serif; font-size: 96px; font-weight: 800; color: #F5B914; line-height: 1;">?</span>
+    <section id="buy" class="section buy-section">
+      <div class="shell buy-grid">
+        <div class="buy-photo">
+          <img src="/assets/card-live.webp" alt="Kihap Cards live sparring drill" loading="lazy">
+          <img src="/assets/card-reaction.webp" alt="Kihap Cards reaction drill" loading="lazy">
+          <img src="/assets/card-strength.webp" alt="Kihap Cards strength drill" loading="lazy">
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-          <span style="font-family: 'Baloo 2', sans-serif; font-style: italic; font-size: 30px; font-weight: 600; color: #ffffff;">Sofia Rullo</span>
-          <span style="width: 150px; height: 2px; background: #F5B914;"></span>
-          <span style="font-size: 12px; letter-spacing: 1.4px; color: #9AA0A8;">HAND-SIGNED</span>
+        <div class="buy-card">
+          <p class="eyebrow">Kihap! Cards set</p>
+          <div class="price"><strong>$99</strong><span>one-time</span></div>
+          <p class="buy-summary">A complete set of 65 laminated taekwondo drill cards, delivered free within the United States.</p>
+          <ul class="check-list"><li>61 core drills + 4 advanced bonus drills</li><li>Nine color-coded training categories</li><li>Three-goal star system on every card</li><li>Companion app access included</li><li>Free U.S. shipping</li></ul>
+          <a class="button button-block" data-checkout href="#buy">Continue to secure checkout</a>
+          <p class="checkout-note">Checkout and payment are securely handled by Stripe.</p>
+          <p class="test-notice" data-test-notice hidden><strong>Preview mode:</strong> Stripe is currently using a test checkout. No real payment will be processed.</p>
+          <noscript><p class="test-notice">JavaScript is required to open checkout.</p></noscript>
         </div>
       </div>
+    </section>
+
+    <section id="faq" class="section shell faq-section" aria-labelledby="faq-title">
+      <div class="section-heading"><p class="eyebrow">Questions</p><h2 id="faq-title">Before you order</h2></div>
+      <div class="faq-list">
+        <details><summary>What is included?</summary><p>One set includes 61 core drill cards and 4 advanced bonus drill cards across nine training categories.</p></details>
+        <details><summary>Where do you ship?</summary><p>Checkout is currently configured for United States shipping only. Shipping is included in the $99 price.</p></details>
+        <details><summary>How does checkout work?</summary><p>Select Buy Now and you will continue to a secure checkout hosted by Stripe. Kihap! Cards never receives your full payment-card number.</p></details>
+        <details><summary>What if my set arrives damaged?</summary><p>Email <a href="mailto:kihapcards@gmail.com">kihapcards@gmail.com</a> with your order email and photos of the package so we can make it right.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><img src="/assets/logo.webp" alt="Kihap! Cards" width="160" height="93"><p>Taekwondo training, one card at a time.</p></div>
+      <nav aria-label="Store policies"><a href="/privacy.html">Privacy</a><a href="/returns.html">Returns</a><a href="/shipping.html">Shipping</a><a href="/terms.html">Terms</a></nav>
+      <div class="footer-contact"><strong>Questions?</strong><a href="mailto:kihapcards@gmail.com">kihapcards@gmail.com</a></div>
     </div>
-  </section>
-
-  <!-- buy -->
-  <section id="buy" style="box-sizing: border-box; padding: 96px 80px; display: flex; gap: 72px; align-items: center;">
-    <div style="width: 560px; display: flex; flex-direction: column; gap: 24px;">
-      <h2 style="font-size: 52px; font-weight: 800; letter-spacing: -1px; line-height: 1.05;">The Kihap! Cards set</h2>
-      <div style="display: flex; align-items: baseline; gap: 12px;">
-        <span style="font-family: 'Baloo 2', sans-serif; font-size: 56px; font-weight: 800;">$99</span>
-        <span style="font-size: 17px; color: #6B7280;">one-time · free US shipping</span>
-      </div>
-      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px;">
-        <li style="display: flex; align-items: center; gap: 12px; font-size: 18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F8B58" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
-          61 drill cards plus 4 advanced bonus drills
-        </li>
-        <li style="display: flex; align-items: center; gap: 12px; font-size: 18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F8B58" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
-          Star reward system printed on every card
-        </li>
-        <li style="display: flex; align-items: center; gap: 12px; font-size: 18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F8B58" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
-          Companion app access, included with the set
-        </li>
-        <li style="display: flex; align-items: center; gap: 12px; font-size: 18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F8B58" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
-          Storage ring and quick-start card
-        </li>
-      </ul>
-      <div style="display: flex; align-items: center; gap: 18px; padding-top: 6px;">
-        <a class="email-order" href="#buy" style="text-decoration: none; background: #EF2B2D; color: #ffffff; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 20px; padding: 18px 40px; border-radius: 999px;">Buy Now</a>
-        <span style="font-size: 15px; color: #6B7280;">30-day returns</span>
-      </div>
-    </div>
-    <div style="flex-grow: 1; background: #F6F7F9; border-radius: 28px; padding: 48px; display: flex; justify-content: center; align-items: center; position: relative;">
-      <div style="position: absolute; left: 30px; bottom: 30px; width: 252px; background: #ffffff; border: 1px solid #E8CE84; border-left: 4px solid #F5B914; border-radius: 14px; padding: 14px 16px; box-shadow: 0 8px 22px rgba(17,17,17,0.10); display: flex; flex-direction: column; gap: 6px; z-index: 4;">
-        <span style="display: flex; align-items: center; gap: 8px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B88400" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 5H5v2a3 3 0 0 0 3 3"></path><path d="M16 5h3v2a3 3 0 0 1-3 3"></path><path d="M10 13h4l-.5 4h-3z"></path><path d="M8 20h8"></path><path d="M10.5 17h3l.5 3h-4z"></path></svg>
-          <span style="font-size: 11px; font-weight: 800; letter-spacing: 1.4px; color: #B88400;">RARE INSERT</span>
-        </span>
-        <span style="font-size: 14px; line-height: 1.45; color: #111111;">Some decks contain a mystery card hand-signed by national champion <strong>Sofia Rullo</strong>.</span>
-      </div>
-      <img src="assets/card-live.webp" alt="Live sparring card: Tag" style="width: 196px; border-radius: 12px; transform: rotate(-11deg); box-shadow: 0 12px 28px rgba(17,17,17,0.16); position: absolute; left: 44px; top: 132px;">
-      <img src="assets/card-reaction.webp" alt="Reaction card: Paddle Claps" style="width: 196px; border-radius: 12px; transform: rotate(11deg); box-shadow: 0 12px 28px rgba(17,17,17,0.16); position: absolute; right: 44px; top: 132px;">
-      <div style="position: relative; width: 600.0px; height: 560.0px; display: flex; align-items: center; justify-content: center; perspective: 1250.0px; perspective-origin: 60% 38%;">
-      <span style="position: absolute; left: 96.0px; bottom: 58.0px; width: 380.0px; height: 54.0px; border-radius: 50%; background: rgba(17,17,17,0.30); filter: blur(26.0px); transform: skewX(-14deg);"></span>
-
-      <div style="position: relative; width: 330.0px; height: 430.0px; transform-style: preserve-3d; transform: rotateX(-15deg) rotateY(-25deg) translateX(-14.0px);">
-
-        <div style="position: absolute; left: 0; top: 0; width: 104.0px; height: 430.0px; box-sizing: border-box; transform-origin: left center; transform: translateX(330.0px) rotateY(90deg); background: linear-gradient(90deg, #C9D3DC 0%, #9AA7B3 55%, #75818D 100%); border: 1px solid #6F7B87; border-radius: 0 9.0px 9.0px 0; padding: 15.0px 11.0px; display: flex; flex-direction: column; gap: 2.0px; justify-content: center; box-shadow: inset -14.0px 0 26.0px rgba(17,17,17,0.30);">
-          <span style="display:block; height:5.0px; background:#E9EEF3; border-radius:2.0px; margin-bottom:3.0px;"></span>
-          <span style="display:block; height:7.0px; background:#1E88FF; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#0B5FBF; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#0F8B58; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#0E8C86; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#EF2B2D; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#9A7400; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#7B3FE4; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#D4531B; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#6B7280; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#1E88FF; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#0B5FBF; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#0F8B58; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#0E8C86; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#EF2B2D; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#9A7400; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#7B3FE4; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#D4531B; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#6B7280; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#1E88FF; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#0B5FBF; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#0F8B58; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#0E8C86; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#EF2B2D; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#9A7400; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#7B3FE4; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span><span style="display:block; height:7.0px; background:#D4531B; box-shadow: 0 1.0px 0 rgba(17,17,17,0.30);"></span>
-          <span style="display:block; height:5.0px; background:#E9EEF3; border-radius:2.0px; margin-top:3.0px;"></span>
-        </div>
-
-        <div style="position: absolute; left: 0; top: 0; width: 330.0px; height: 104.0px; box-sizing: border-box; transform-origin: center bottom; transform: translateY(-104.0px) rotateX(90deg); background: linear-gradient(180deg, #9EABB7 0%, #CFD9E1 45%, #EDF2F6 100%); border: 1px solid #6F7B87; border-radius: 10.0px 10.0px 0 0; padding: 0 20.0px; display: flex; align-items: center; justify-content: space-between; box-shadow: inset 0 14.0px 24.0px rgba(17,17,17,0.22);">
-          <span style="font-family: 'Baloo 2', sans-serif; font-size: 13.0px; font-weight: 800; letter-spacing: 2.0px; color: #52606D;">KIHAP! CARDS</span>
-          <span style="width: 76.0px; height: 10.0px; border-radius: 5.0px; background: rgba(17,17,17,0.18);"></span>
-        </div>
-
-        <div style="position: absolute; left: 0; top: 0; width: 330.0px; height: 430.0px; box-sizing: border-box; overflow: hidden; background: linear-gradient(112deg, #F4F8FB 0%, #FFFFFF 26%, #DFE8EF 58%, #F4F9FC 78%, #CFDAE3 100%); border: 2px solid #93A0AC; border-radius: 12.0px; box-shadow: inset 0 0 0 3px rgba(255,255,255,0.8), inset -14.0px 0 26.0px rgba(17,17,17,0.10); padding: 13.0px; display: flex; flex-direction: column; gap: 8.0px;">
-          <span style="position: absolute; left: -60.0px; top: -30.0px; width: 96.0px; height: 640.0px; background: rgba(255,255,255,0.26); transform: rotate(14deg); pointer-events: none; z-index: 3;"></span>
-          <span style="position: absolute; left: 28.0px; top: -30.0px; width: 24.0px; height: 640.0px; background: rgba(255,255,255,0.16); transform: rotate(14deg); pointer-events: none; z-index: 3;"></span>
-
-          <img src="assets/box-label.webp" alt="Kihap! Cards — 65 laminated drill cards, 9 categories, ages 6–13, star system" style="position: relative; width: 100%; height: auto; display: block; border-radius: 9.0px; border: 1px solid #D5DCE3; box-shadow: 0 2.0px 7.0px rgba(17,17,17,0.13); background: #ffffff;">
-
-          <div style="position: relative; flex-grow: 1; min-height: 22.0px; border-radius: 7.0px; background: linear-gradient(180deg, rgba(120,135,150,0.22), rgba(255,255,255,0.30)); border: 1px solid rgba(17,17,17,0.12); box-shadow: inset 0 3.0px 7.0px rgba(17,17,17,0.16); padding: 6.0px 9.0px; display: flex; flex-direction: column; gap: 3.0px; justify-content: center; overflow: hidden;">
-            <span style="display:block; height:7.0px; border-radius:2.0px; background:#1E88FF; opacity:0.6; box-shadow: 0 1.0px 1.0px rgba(17,17,17,0.16);"></span><span style="display:block; height:7.0px; border-radius:2.0px; background:#0B5FBF; opacity:0.6; box-shadow: 0 1.0px 1.0px rgba(17,17,17,0.16);"></span><span style="display:block; height:7.0px; border-radius:2.0px; background:#0F8B58; opacity:0.6; box-shadow: 0 1.0px 1.0px rgba(17,17,17,0.16);"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- faq -->
-  <section id="faq" style="box-sizing: border-box; padding: 0 80px 96px; display: flex; gap: 72px;">
-    <h2 style="width: 360px; font-size: 44px; font-weight: 800; letter-spacing: -0.8px; line-height: 1.1;">Questions<br>parents ask</h2>
-    <div style="flex-grow: 1; display: flex; flex-direction: column;">
-      <div style="border-top: 1px solid #E6E8EC; padding: 26px 0; display: flex; gap: 40px;">
-        <h3 style="width: 300px; font-size: 21px; font-weight: 700;">What age are these for?</h3>
-        <p style="margin: 0; flex-grow: 1; font-size: 17px; line-height: 1.6; color: #4B5158;">Built for kids roughly 6–13 who spar or are starting to. The reps scale — a younger student does fewer, an older one chases the Stretch Star.</p>
-      </div>
-      <div style="border-top: 1px solid #E6E8EC; padding: 26px 0; display: flex; gap: 40px;">
-        <h3 style="width: 300px; font-size: 21px; font-weight: 700;">Do I need taekwondo experience?</h3>
-        <p style="margin: 0; flex-grow: 1; font-size: 17px; line-height: 1.6; color: #4B5158;">No. Each card names the drill, the reps and what a good rep looks like. If you can read the card and hold a paddle, you can run the session.</p>
-      </div>
-      <div style="border-top: 1px solid #E6E8EC; padding: 26px 0; display: flex; gap: 40px;">
-        <h3 style="width: 300px; font-size: 21px; font-weight: 700;">Do I need equipment?</h3>
-        <p style="margin: 0; flex-grow: 1; font-size: 17px; line-height: 1.6; color: #4B5158;">Most cards need nothing. A few call for paddles, a kick shield or BlazePods — they're marked so you can skip or swap them.</p>
-      </div>
-      <div style="border-top: 1px solid #E6E8EC; border-bottom: 1px solid #E6E8EC; padding: 26px 0; display: flex; gap: 40px;">
-        <h3 style="width: 300px; font-size: 21px; font-weight: 700;">Is the app extra?</h3>
-        <p style="margin: 0; flex-grow: 1; font-size: 17px; line-height: 1.6; color: #4B5158;">No. It comes with the set and tracks stars for as many students as you like — handy if you're a coach running a class.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- footer -->
-  <footer style="position: relative; margin-top: auto; box-sizing: border-box; padding: 40px 80px; border-top: 1px solid #E6E8EC; display: flex; align-items: center; justify-content: space-between;">
-    <span style="position: absolute; left: 70px; top: -52px; background: #ffffff; border-radius: 18px; padding: 6px 16px;">
-      <img src="assets/logo.webp" alt="Kihap! Cards" style="height: 134px; width: auto; display: block;">
-    </span>
-    <span style="display: block; width: 226px; height: 1px;"></span>
-    <nav style="display: flex; gap: 28px;">
-      <a href="#cards" style="text-decoration: none; font-size: 15px; color: #4B5158;">The cards</a>
-      <a href="#stars" style="text-decoration: none; font-size: 15px; color: #4B5158;">Stars &amp; app</a>
-      <a href="#limited" style="text-decoration: none; font-size: 15px; color: #4B5158;">Limited edition</a>
-      <a href="#faq" style="text-decoration: none; font-size: 15px; color: #4B5158;">FAQ</a>
-      <a class="email-contact" href="#contact" style="text-decoration: none; font-size: 15px; color: #4B5158;">Contact</a>
-    </nav>
-    <span style="font-size: 15px; color: #6B7280;">© 2026 Kihap! Cards</span>
+    <div class="shell footer-bottom">© <span data-year>2026</span> Kihap! Cards. All rights reserved.</div>
   </footer>
-
-</div>
 </body>
 </html>

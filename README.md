@@ -1,60 +1,32 @@
-# Kihap! Cards — website
+# Kihap! Cards website
 
-Static one-page store for Kihap! Cards. No build step, no dependencies — plain HTML
-with inline styles and image files. Anything that can serve a folder can host it.
+A lightweight responsive storefront built with plain HTML, CSS, and JavaScript.
 
-## Files
+## Architecture
 
-| Path | What it is |
-|---|---|
-| `index.html` | The site (desktop layout, 1440px wide) |
-| `mobile.html` | The phone layout (390px wide) |
-| `assets/` | Logo and card images (WebP) |
-| `favicon.ico`, `favicon-*.png` | Browser tab icons |
-| `apple-touch-icon.png` | iPhone and iPad home-screen icon |
-| `android-chrome-*.png` | Android and installable web-app icons |
-| `site.webmanifest`, `browserconfig.xml` | Mobile/PWA and Microsoft icon metadata |
+- No framework, dependencies, build step, database, or server runtime
+- One responsive `index.html` for desktop and mobile
+- `mobile.html` redirects old links to the canonical page
+- Stripe-hosted checkout handles payments and order details
+- YouTube/Vimeo video loads only after the visitor clicks Play
+- Static privacy, return, shipping, and terms pages
 
-`index.html` redirects to `mobile.html` under 760px wide, and `mobile.html` redirects
-back above it. Add `?full` to the URL to force the desktop page on a phone.
+## Store configuration
 
-## Publishing on GitHub Pages
+Edit the `store` object near the top of `site.js`:
 
-1. Create a new repository on GitHub (public, no README — this folder already has one).
-2. Upload the contents of this folder to the root of the repo: `index.html`,
-   `mobile.html`, `README.md` and the whole `assets` folder.
-   Either drag them onto the repo page ("uploading an existing file"), or from a terminal:
+```js
+var store = {
+  checkoutUrl: 'https://buy.stripe.com/8x2dRa5M9fLmfi4dyp9k400',
+  testMode: false,
+  videoUrl: 'https://vimeo.com/1236913465'
+};
+```
 
-   ```bash
-   cd kihap-cards-site
-   git init
-   git add .
-   git commit -m "Kihap! Cards website"
-   git branch -M main
-   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
-   git push -u origin main
-   ```
+The checkout uses the live Stripe Payment Link and can process real payments. The Vimeo explainer is configured in `videoUrl`; for an unlisted Vimeo replacement, keep the complete URL including its privacy hash. The third-party player will not load until Play is clicked.
 
-3. In the repo, go to **Settings → Pages**. Under "Build and deployment", set
-   **Source** to *Deploy from a branch*, **Branch** to `main` and folder to `/ (root)`.
-   Save.
-4. Wait about a minute, then open `https://YOUR-USERNAME.github.io/YOUR-REPO/`.
+## Local preview
 
-To use your own domain, add it under Settings → Pages → Custom domain and point a
-CNAME record at `YOUR-USERNAME.github.io` with your registrar.
+Run `python3 -m http.server 8080` in this directory, then open `http://localhost:8080`.
 
-## Editing
-
-Everything is inline in the two HTML files — text can be edited straight in GitHub's
-web editor. Images live in `assets/`; replacing a file keeps every reference working
-as long as the filename stays the same.
-
-## Known limits
-
-- The layouts are fixed-width (1440 / 390), which is why the redirect exists. A single
-  fluid layout would need the inline widths reworked into a responsive stylesheet.
-- Every purchase button and Contact open an on-page email card. The card sends
-  submissions to `kihapcards@gmail.com` through FormSubmit; it is not a payment
-  checkout. The recipient must confirm FormSubmit's one-time activation email.
-- Product claims in the copy — free US shipping, 30-day returns, storage ring and
-  quick-start card — are placeholders to confirm before launch.
+The repository can be deployed as-is to any static host, including the existing Vercel project. No build command is needed.
