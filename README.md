@@ -9,6 +9,7 @@ A lightweight responsive storefront built with plain HTML, CSS, and JavaScript.
 - `mobile.html` redirects old links to the canonical page
 - Stripe-hosted checkout handles payments and order details
 - YouTube/Vimeo video loads only after the visitor clicks Play
+- Card-themed editorial pages for parents and the product origin story
 - Static privacy, return, shipping, and terms pages
 
 ## Store configuration
