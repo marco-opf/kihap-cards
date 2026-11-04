@@ -50,3 +50,4 @@
 /* Use a real element for the next-card label so every browser paints the cue. */
 .draw-card::after{content:none}.draw-card-next{position:absolute;z-index:1;left:18px;right:18px;bottom:-46px;display:block;height:58px;padding:17px 25px;border:1px solid rgba(0,0,0,.14);border-radius:0 0 22px 22px;background:var(--next-accent);color:var(--next-ink,#fff);font-size:.75rem;font-weight:950;letter-spacing:.11em;text-transform:uppercase;box-shadow:0 14px 32px rgba(17,17,17,.18)}
 @media(max-width:720px){.draw-card-next{left:11px;right:11px;bottom:-39px;height:50px;padding:14px 17px;border-radius:0 0 17px 17px;font-size:.64rem;letter-spacing:.06em}}
+.story-deck-section{padding-top:72px}@media(max-width:720px){.story-deck-section{padding-top:52px}}
