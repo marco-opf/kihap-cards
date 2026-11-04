@@ -34,6 +34,42 @@
     });
   }
 
+  var drawDecks = Array.prototype.slice.call(document.querySelectorAll('[data-draw-deck]'));
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (drawDecks.length && !reduceMotion) {
+    document.documentElement.classList.add('deck-motion-ready');
+    var deckTicking = false;
+
+    function updateDrawDecks() {
+      var focusLine = window.innerHeight * 0.44;
+      drawDecks.forEach(function (deck) {
+        var cards = Array.prototype.slice.call(deck.querySelectorAll('[data-draw-card]'));
+        var activeIndex = -1;
+
+        cards.forEach(function (card, index) {
+          if (card.getBoundingClientRect().top <= focusLine) activeIndex = index;
+        });
+
+        cards.forEach(function (card, index) {
+          card.classList.toggle('is-active', index === activeIndex);
+          card.classList.toggle('is-past', index < activeIndex);
+          card.classList.toggle('is-next', index === activeIndex + 1 || (activeIndex < 0 && index === 0));
+        });
+      });
+      deckTicking = false;
+    }
+
+    function requestDeckUpdate() {
+      if (deckTicking) return;
+      deckTicking = true;
+      window.requestAnimationFrame(updateDrawDecks);
+    }
+
+    window.addEventListener('scroll', requestDeckUpdate, { passive: true });
+    window.addEventListener('resize', requestDeckUpdate);
+    requestDeckUpdate();
+  }
+
   function embedVideo(container, url) {
     var youtube = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{11})/);
     var vimeo = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
