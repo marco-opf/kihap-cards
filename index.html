@@ -16,8 +16,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/styles.css">
-  <script defer src="/site.js?v=hand-signature-1"></script>
+  <link rel="stylesheet" href="/styles.css?v=box-gallery-1">
+  <script defer src="/site.js?v=box-gallery-1"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -154,10 +154,34 @@
 
     <section id="buy" class="section buy-section">
       <div class="shell buy-grid">
-        <div class="buy-photo">
-          <img src="/assets/card-live.webp" alt="Kihap Cards live sparring drill" loading="lazy">
-          <img src="/assets/card-reaction.webp" alt="Kihap Cards reaction drill" loading="lazy">
-          <img src="/assets/card-strength.webp" alt="Kihap Cards strength drill" loading="lazy">
+        <div class="box-gallery" data-box-gallery role="region" aria-roledescription="carousel" aria-label="Kihap Cards box views" tabindex="0">
+          <div class="box-gallery-stage" data-box-stage>
+            <div class="box-gallery-track">
+              <figure class="box-gallery-slide is-active" data-box-slide role="group" aria-roledescription="slide" aria-label="1 of 3 — Front view" aria-hidden="false">
+                <img src="/assets/box-render-front.png" alt="Kihap Cards box, front view" width="556" height="576" loading="lazy">
+              </figure>
+              <figure class="box-gallery-slide" data-box-slide role="group" aria-roledescription="slide" aria-label="2 of 3 — Inside the box" aria-hidden="true">
+                <img src="/assets/box-render-open.png" alt="Kihap Cards box opened to show the inside" width="517" height="653" loading="lazy">
+              </figure>
+              <figure class="box-gallery-slide" data-box-slide role="group" aria-roledescription="slide" aria-label="3 of 3 — Angled view" aria-hidden="true">
+                <img src="/assets/box-render-angled.png" alt="Kihap Cards box, angled view" width="656" height="511" loading="lazy">
+              </figure>
+            </div>
+          </div>
+          <div class="box-gallery-controls" aria-label="Choose a box view">
+            <button class="box-gallery-button is-active" type="button" data-box-index="0" aria-label="Show front view" aria-current="true">
+              <img src="/assets/box-render-front.png" alt="" width="556" height="576" loading="lazy">
+              <span>Front</span>
+            </button>
+            <button class="box-gallery-button" type="button" data-box-index="1" aria-label="Show inside the box" aria-current="false">
+              <img src="/assets/box-render-open.png" alt="" width="517" height="653" loading="lazy">
+              <span>Inside</span>
+            </button>
+            <button class="box-gallery-button" type="button" data-box-index="2" aria-label="Show angled view" aria-current="false">
+              <img src="/assets/box-render-angled.png" alt="" width="656" height="511" loading="lazy">
+              <span>Angled</span>
+            </button>
+          </div>
         </div>
         <div class="buy-card">
           <p class="eyebrow">Kihap! Cards set</p>

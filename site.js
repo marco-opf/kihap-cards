@@ -54,6 +54,69 @@
     window.requestAnimationFrame(writeSignatureWhenVisible);
   }
 
+  document.querySelectorAll('[data-box-gallery]').forEach(function (gallery) {
+    var stage = gallery.querySelector('[data-box-stage]');
+    var slides = Array.prototype.slice.call(gallery.querySelectorAll('[data-box-slide]'));
+    var buttons = Array.prototype.slice.call(gallery.querySelectorAll('[data-box-index]'));
+    var mobileQuery = window.matchMedia('(max-width: 720px)');
+    var current = 0;
+    var scrollTicking = false;
+
+    if (!stage || !slides.length || !buttons.length) return;
+
+    function updateView(index, moveStage) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach(function (slide, slideIndex) {
+        var active = slideIndex === current;
+        slide.classList.toggle('is-active', active);
+        slide.setAttribute('aria-hidden', String(!active));
+      });
+      buttons.forEach(function (button, buttonIndex) {
+        var active = buttonIndex === current;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-current', String(active));
+      });
+
+      if (moveStage && mobileQuery.matches) {
+        stage.scrollTo({
+          left: slides[current].offsetLeft,
+          behavior: reduceMotion ? 'auto' : 'smooth'
+        });
+      }
+    }
+
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        updateView(Number(button.getAttribute('data-box-index')), true);
+      });
+    });
+
+    gallery.addEventListener('keydown', function (event) {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      updateView(current + (event.key === 'ArrowRight' ? 1 : -1), true);
+      buttons[current].focus();
+    });
+
+    stage.addEventListener('scroll', function () {
+      if (!mobileQuery.matches || scrollTicking) return;
+      scrollTicking = true;
+      window.requestAnimationFrame(function () {
+        var next = Math.round(stage.scrollLeft / Math.max(stage.clientWidth, 1));
+        if (next !== current && next >= 0 && next < slides.length) updateView(next, false);
+        scrollTicking = false;
+      });
+    }, { passive: true });
+
+    function alignGallery() {
+      if (mobileQuery.matches) stage.scrollLeft = slides[current].offsetLeft;
+    }
+
+    if (mobileQuery.addEventListener) mobileQuery.addEventListener('change', alignGallery);
+    else if (mobileQuery.addListener) mobileQuery.addListener(alignGallery);
+    updateView(0, false);
+  });
+
   if (drawDecks.length && !reduceMotion) {
     document.documentElement.classList.add('deck-motion-ready');
     var deckTicking = false;
