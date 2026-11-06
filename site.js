@@ -36,6 +36,24 @@
 
   var drawDecks = Array.prototype.slice.call(document.querySelectorAll('[data-draw-deck]'));
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var signature = document.querySelector('[data-signature]');
+  if (signature && !reduceMotion) {
+    signature.classList.add('signature-ready');
+
+    function writeSignatureWhenVisible() {
+      var rect = signature.getBoundingClientRect();
+      if (rect.top > window.innerHeight * 0.82 || rect.bottom < window.innerHeight * 0.18) return;
+      signature.classList.add('is-signing');
+      window.removeEventListener('scroll', writeSignatureWhenVisible);
+      window.removeEventListener('resize', writeSignatureWhenVisible);
+    }
+
+    window.addEventListener('scroll', writeSignatureWhenVisible, { passive: true });
+    window.addEventListener('resize', writeSignatureWhenVisible);
+    window.requestAnimationFrame(writeSignatureWhenVisible);
+  }
+
   if (drawDecks.length && !reduceMotion) {
     document.documentElement.classList.add('deck-motion-ready');
     var deckTicking = false;
